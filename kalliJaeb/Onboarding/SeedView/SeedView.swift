@@ -58,32 +58,16 @@ struct SeedView: View {
 
         static let seedPhrases: [String] = ["Hello", "Seed", "Phrase", "Test", "Create", "an",
                                             "Turtle", "Fox", "Elephant", "Tiger", "Lion", "Zebra","Snake", "Cat", "Dog","Bottle","Water"]
-        static let padding: CGFloat = 10
+        static let padding: CGFloat = 16
         static let limit: Int = 2
     }
     
-    
-    @State var show: Bool = false
-    @State var selectedPhrases: Array<String> = []
-    @State var showButton: Bool = false
-    @State var showNextPage: Bool = false
-    @State var shakes: CGFloat = 0
+    @StateObject var model: SeedViewModel
     @Namespace var animation
-    var type: SeedViewType
     
-    init(type: SeedViewType) {
-        self.type = type
+    init(model: SeedViewModel) {
+        self._model = .init(wrappedValue: model)
     }
-    
-   
-    private func onAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50)) {
-            withAnimation(.easeInOut(duration: 0.75)) {
-                self.show = true
-            }
-        }
-    }
-    
     
     func createSeedPhraseBlob(phrase: String) -> some View {
         let size = phrase.size(usingFont: CustomFonts.regular.fontBuilder(size: 20) ?? .systemFont(ofSize: 20))
@@ -100,21 +84,19 @@ struct SeedView: View {
        return VStack(alignment: .leading, spacing: 10) {
            ForEach(rows, id: \.self) { row in
                columnBuilder(colsStr: row, isSource: true) { text in
-                   if !self.selectedPhrases.contains(text) && self.selectedPhrases.count < 12 {
-                       self.selectedPhrases.append(text)
-                   }
+                   self.model.addKeysToSelectedKeys(text: text)
                }
             }
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
     
     var selectedGrid: some View {
-        let rows = selectedPhrases.multiDim(totalWidth: UIScreen.main.bounds.width - 2 * Constants.padding)
+        let rows = model.selectedPhrases.multiDim(totalWidth: UIScreen.main.bounds.width - 2 * Constants.padding)
     
        return VStack(alignment: .leading, spacing: 10) {
            ForEach(rows, id: \.self) { row in
                columnBuilder(colsStr: row, isSource: false) { text in
-                   self.selectedPhrases.removeAll { $0 == text }
+                   self.model.removeSelectedPhrase(text: text)
                }
             }
        }
@@ -122,8 +104,8 @@ struct SeedView: View {
        .frame(maxWidth: .infinity, minHeight: 100, alignment: .topLeading)
        .background(Color.purple.opacity(0.15).blur(radius: 10))
         .borderCard(borderColor: .surfaceBackgroundInverse, radius: 12, borderWidth: 1)
-        .containerize(title: "Selected Keys".medium(size: 15), subTitle: "\(selectedPhrases.count)/\(Constants.limit)".medium(size: 15), vPadding: 5, hPadding: 5, alignment: .leading, style: .headCaption)
-        .shakeView(shakes: shakes)
+        .containerize(title: "Selected Keys".medium(size: 15), subTitle: "\(model.selectedPhrases.count)/\(Constants.limit)".medium(size: 15), vPadding: 5, hPadding: 5, alignment: .leading, style: .headCaption)
+        .shakeView(shakes: model.shakes)
         
     }
     
@@ -132,7 +114,7 @@ struct SeedView: View {
             ForEach(colsStr, id: \.self) { text in
                 createSeedPhraseBlob(phrase: text)
                     .matchedGeometryEffect(id: text, in: animation)
-                    .isHidden(isSource ? !self.selectedPhrases.contains(text) : true)
+                    .isHidden(isSource ? self.model.isSelected(text: text) : true)
                     .buttonify {
                         handler(text)
                     }
@@ -142,11 +124,11 @@ struct SeedView: View {
     
     var mainBody: some View {
         VStack {
-            type.header.bold(size: 30)
+            model.header.bold(size: 30)
                 .text
-                .padding(.init(vertical: 5, horizontal: 10))
+                .padding(.init(vertical: 5))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .slideIn(show: show, direction: .bottom)
+                .slideIn(show: model.show, direction: .bottom)
             
             Spacer()
             
@@ -168,30 +150,16 @@ struct SeedView: View {
 
             mainBody
 
-            Button(text: "Continue", config: .auto(background: .green)) {
-                let val = type.confirmCondition(keysToConfirm: selectedPhrases)
-                showNextPage = val
-                if !val {
-                    withAnimation(.easeInOut(duration: 1)) {
-                        self.shakes += 5
-                    }
-                }
-                
-            }
-            .slideIn(show: showButton, direction: .bottom)
+            Button(text: "Continue", config: .auto(background: .green), handler: model.continueAction)
+            .slideIn(show: model.showButton, direction: .bottom)
             .padding(.init(by: 10))
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
 
-            NavLink(isActive: $showNextPage) {
-                type.nextStep(keys: selectedPhrases)
+            NavLink(isActive: $model.showNextPage) {
+                model.nextStep
             }
         }
-        .onAppear(perform: onAppear)
-        .onChange(of: selectedPhrases.count) { count in
-            if count == Constants.limit {
-                showButton = true
-            }
-        }
+        .onAppear(perform: model.onAppear)
     }
     
 }
@@ -201,7 +169,7 @@ fileprivate struct Preview: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            SeedView(type: .create)
+            SeedView(model: .init(pageType: .create))
         }
     }
 }

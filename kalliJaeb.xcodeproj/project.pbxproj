@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,8 @@
 		EFF2C930293BA56A0081E23E /* googleTest.html in Resources */ = {isa = PBXBuildFile; fileRef = EFF2C92F293BA56A0081E23E /* googleTest.html */; };
 		EFF2C933293BB6EE0081E23E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C932293BB6EE0081E23E /* LoginView.swift */; };
 		EFF2C935293BD6510081E23E /* JobCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C934293BD6510081E23E /* JobCard.swift */; };
+		EFF2C937293C09EA0081E23E /* SeedViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C936293C09EA0081E23E /* SeedViewType.swift */; };
+		EFF2C93A293C11460081E23E /* AccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C939293C11460081E23E /* AccountPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		EFF2C92F293BA56A0081E23E /* googleTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = googleTest.html; sourceTree = "<group>"; };
 		EFF2C932293BB6EE0081E23E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EFF2C934293BD6510081E23E /* JobCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCard.swift; sourceTree = "<group>"; };
+		EFF2C936293C09EA0081E23E /* SeedViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedViewType.swift; sourceTree = "<group>"; };
+		EFF2C939293C11460081E23E /* AccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,7 @@
 		EFAAB53E293A8C8E001D431B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				EFF2C938293C11390081E23E /* Account */,
 				EFF2C931293BB6E50081E23E /* Login */,
 				EFAAB54E293B4702001D431B /* SeedView */,
 				EFAAB53F293A8C9E001D431B /* OnboardingFlow.swift */,
@@ -295,6 +300,7 @@
 			children = (
 				EFAAB547293A9ABB001D431B /* SeedView.swift */,
 				EFAAB54F293B4718001D431B /* SeedViewModel.swift */,
+				EFF2C936293C09EA0081E23E /* SeedViewType.swift */,
 			);
 			path = SeedView;
 			sourceTree = "<group>";
@@ -323,6 +329,14 @@
 				EFF2C932293BB6EE0081E23E /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		EFF2C938293C11390081E23E /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				EFF2C939293C11460081E23E /* AccountPage.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,11 +597,13 @@
 				EFF2C935293BD6510081E23E /* JobCard.swift in Sources */,
 				EFAAB550293B4718001D431B /* SeedViewModel.swift in Sources */,
 				EFAAB53B293A84B4001D431B /* CustomFonts.swift in Sources */,
+				EFF2C937293C09EA0081E23E /* SeedViewType.swift in Sources */,
 				EFAAB53D293A854A001D431B /* Color.swift in Sources */,
 				EFF2C92B293B957D0081E23E /* UIImage.swift in Sources */,
 				EFA59505293A7F0A003BC760 /* ContentView.swift in Sources */,
 				EFF2C929293B941C0081E23E /* Image.swift in Sources */,
 				EFAAB58F293B78D5001D431B /* HomePage.swift in Sources */,
+				EFF2C93A293C11460081E23E /* AccountPage.swift in Sources */,
 				EFAAB548293A9ABB001D431B /* SeedView.swift in Sources */,
 				EFAAB592293B7989001D431B /* JobFancySwipeView.swift in Sources */,
 				EFAAB543293A902E001D431B /* SlideAnimaton.swift in Sources */,

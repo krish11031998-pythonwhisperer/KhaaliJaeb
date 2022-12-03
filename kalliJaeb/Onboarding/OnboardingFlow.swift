@@ -54,7 +54,7 @@ struct OnboardingView: View {
             .padding(.init(by: 20))
             
             NavLink(isActive: $showRegister) {
-                SeedView(type: .create)
+                SeedView(model: .init(pageType: .create))
             }
             
             NavLink(isActive: $showLogin) {
@@ -65,19 +65,4 @@ struct OnboardingView: View {
         .onAppear(perform: onAppear)
     }
     
-}
-
-
-struct LoginFlow: View {
-    
-    var body: some View {
-        Color.surfaceBackground
-    }
-}
-
-fileprivate struct Preview: PreviewProvider {
-    
-    static var previews: some View {
-        OnboardingView()
-    }
 }
