@@ -32,13 +32,14 @@ struct ButtonConfigStyle: ViewModifier {
                 .frame(height: 48)
                 .fillWidth(alignment: .center)
                 .background(background)
-                .borderCard(borderColor: .surfaceBackgroundInverse, radius: 8, borderWidth: 1)
+                .sizing(size: $size)
+                .clipContent(radius: size.minDim.half)
         case .auto(let background):
                 content
                     .padding(.init(vertical: 7.5, horizontal: 20))
                     .background(background)
                     .sizing(size: $size)
-                    .borderCard(borderColor: .surfaceBackgroundInverse, radius: size.minDim.half, borderWidth: 1)
+                    .clipContent(radius: size.minDim.half)
         }
     }
 }

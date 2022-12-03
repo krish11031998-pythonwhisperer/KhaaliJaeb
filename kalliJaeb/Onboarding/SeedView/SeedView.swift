@@ -77,17 +77,20 @@ struct SeedView: View {
     
    
     private func onAppear() {
-        withAnimation(.easeInOut) {
-            self.show = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50)) {
+            withAnimation(.easeInOut(duration: 0.75)) {
+                self.show = true
+            }
         }
     }
     
     
     func createSeedPhraseBlob(phrase: String) -> some View {
-        phrase
-            .styled(font: .regular, color: .purple, size: 20)
+        let size = phrase.size(usingFont: CustomFonts.regular.fontBuilder(size: 20) ?? .systemFont(ofSize: 20))
+        return phrase
+            .styled(font: .medium, color: .purple, size: 14)
             .text
-            .blobify(background: .purple.opacity(0.12), padding: 7.5, cornerRadius: 7.5)
+            .blobify(background: .purple.opacity(0.12), padding: 7.5, cornerRadius: size.minDim.half)
     }
     
     var grid: some View {
@@ -143,7 +146,7 @@ struct SeedView: View {
                 .text
                 .padding(.init(vertical: 5, horizontal: 10))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .slideIn(show: show, direction: .top)
+                .slideIn(show: show, direction: .bottom)
             
             Spacer()
             

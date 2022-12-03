@@ -15,12 +15,14 @@ struct HomePage: View {
         
         VStack(alignment: .leading) {
             "Available Jobs".bold(size: 35).text
+                .fillWidth(alignment: .leading)
             Spacer()
             JobFancySwipeView()
             Spacer()
             
         }.padding(.init(by: 10))
         .fillWidth()
+
         
     }
     

@@ -46,7 +46,7 @@ extension SeedViewType {
         switch self {
         case .create:
             SeedView(type: .confirm(keys: keys))
-        case .confirm(let keys):
+        case .confirm:
             HomePage()
         }
     }

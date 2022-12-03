@@ -22,45 +22,6 @@ struct JobFancySwipeView: View {
         static let hLimit: CGFloat = 50
     }
     
-    @ViewBuilder func cardBuilder(number: Int,color: Color) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(alignment: .center, spacing: 10) {
-                "FrontEnd Engineer".bold(size: 20).text
-                Spacer()
-            }
-            Spacer()
-            if currentIdx == number {
-                
-                self.skills(languages: Logo.allCases)
-            }
-            
-            Spacer()
-        }
-        .padding(.init(vertical: 20, horizontal: 10))
-        .background(color)
-        .frame(height: .totalHeight.half, alignment: .center)
-        .borderCard(borderColor: .surfaceBackgroundInverse, radius: 20, borderWidth: 1.25)
-        .padding(.horizontal, 10)
-        .frame(maxWidth: .infinity)
-    }
-    
-    
-    private func skills(languages: [Logo]) -> some View {
-        
-        let size: CGFloat = 60
-        
-        let col: [GridItem] = [.init(.adaptive(minimum: size, maximum: size), spacing: 12, alignment: .leading)]
-        
-        return LazyVGrid(columns: col, alignment: .leading, spacing: 10) {
-            ForEach(languages, id: \.self) {
-                ImageView(image: $0.image?.resized(size: .init(squared: size.half)), contentMode: .fit)
-                    .circleFrame(size: .init(squared: size), background: .white.opacity(0.15), alignment: .center)
-                    .circularProgressBar(pct: ratio, lineWidth: 3, lineColor: .purple)
-            }
-
-        }
-    }
-    
     private func onChanged(value: DragGesture.Value) {
         asyncMainAnimation {
             let width = value.translation.width
@@ -75,11 +36,8 @@ struct JobFancySwipeView: View {
     
     private func onEnded(value:DragGesture.Value) {
         asyncMainAnimation {
-            
             if abs(xOff) > 50 {
-                if xOff < 0 {
-                    self.currentIdx = self.currentIdx > 0 ? self.currentIdx - 1 : self.currentIdx
-                } else if xOff > 0{
+                if xOff > 0{
                     self.currentIdx = self.currentIdx < count ? self.currentIdx + 1 : self.currentIdx
                 }
             }
@@ -115,9 +73,10 @@ struct JobFancySwipeView: View {
         ZStack {
             ForEach(0..<Constants.numbers) {
                 if $0 >= currentIdx &&  $0 <= currentIdx + 2 {
-                    cardBuilder(number: $0,color: .red)
+                    JobCard(jobModel: .basicModel(idx: $0))
+                        .scaleEffect(1 - CGFloat($0 - currentIdx) * 0.075)
                         .offset(x: $0 == currentIdx ? xOff : 0,
-                                y: $0 == currentIdx ? yOff : CGFloat($0 - currentIdx) * 10)
+                                y: $0 == currentIdx ? yOff : CGFloat($0 - currentIdx) * 25)
                         .zIndex(Double(currentIdx - $0))
                         .gesture($0 == currentIdx ? dragGesture : nil)
                     

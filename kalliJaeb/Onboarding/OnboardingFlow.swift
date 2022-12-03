@@ -12,13 +12,14 @@ import SUI
 struct OnboardingView: View {
     
     @State var show: Bool = false
+    @State var showRegister: Bool = false
     @State var showLogin: Bool = false
     struct Constants {
         static let heroHeader: String = "Welcome to khaaliJaeb!"
     }
     
     private func onAppear() {
-        withAnimation(.easeInOut) {
+        withAnimation(.easeInOut(duration: 1.5)) {
             self.show = true
         }
     }
@@ -36,14 +37,15 @@ struct OnboardingView: View {
                 
                 Spacer()
                 
-                Button(text: "Login", config: .large(background: .red)) {
+                Button(text: "Login", config: .large(background: .purple)) {
                     print("Clicked on Login")
+                    self.showLogin = true
                 }
                 .slideIn(show: show, direction: .bottom)
                 
-                Button(text: "Register", config: .large(background: .yellow)) {
+                Button(text: "Register", config: .large(background: .purple)) {
                     print("Clicked on Register")
-                    self.showLogin = true
+                    self.showRegister = true
                 }
                 .slideIn(show: show, direction: .bottom)
 
@@ -51,8 +53,12 @@ struct OnboardingView: View {
             .fillFrame(alignment: .leading)
             .padding(.init(by: 20))
             
-            NavLink(isActive: $showLogin) {
+            NavLink(isActive: $showRegister) {
                 SeedView(type: .create)
+            }
+            
+            NavLink(isActive: $showLogin) {
+                LoginView()
             }
             
         }

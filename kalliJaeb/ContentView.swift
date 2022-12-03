@@ -12,10 +12,10 @@ struct ContentView: View {
     let text: String = "<html><body><p>Hello!</p></body></html>"
     var body: some View {
         NavigationView {
-//            OnboardingView()
+            OnboardingView()
            // HomePage()
 //            CustomWebView(html: text)
-            view
+            //view
         }
     }
     

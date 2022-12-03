@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1AB336BC-B93F-4D2E-A429-046271B4A2A4"
+            uuid = "D8F55983-1887-4BD7-9D03-91170B9F2AEB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "kalliJaeb/HomePage/JobFancySwipeView.swift"
+            filePath = "kalliJaeb/Extensions/SlideAnimaton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "onEnded(value:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "body(content:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,6 +7,8 @@ target 'kalliJaeb' do
 
   # Pods for kalliJaeb
   pod 'SUI'
+pod 'web3.swift'
+
   target 'kalliJaebTests' do
     inherit! :search_paths
     # Pods for testing
