@@ -59,7 +59,7 @@ struct SeedView: View {
         static let seedPhrases: [String] = ["Hello", "Seed", "Phrase", "Test", "Create", "an",
                                             "Turtle", "Fox", "Elephant", "Tiger", "Lion", "Zebra","Snake", "Cat", "Dog","Bottle","Water"]
         static let padding: CGFloat = 10
-        static let limit: Int = 12
+        static let limit: Int = 2
     }
     
     
@@ -67,6 +67,7 @@ struct SeedView: View {
     @State var selectedPhrases: Array<String> = []
     @State var showButton: Bool = false
     @State var showNextPage: Bool = false
+    @State var shakes: CGFloat = 0
     @Namespace var animation
     var type: SeedViewType
     
@@ -119,6 +120,7 @@ struct SeedView: View {
        .background(Color.purple.opacity(0.15).blur(radius: 10))
         .borderCard(borderColor: .surfaceBackgroundInverse, radius: 12, borderWidth: 1)
         .containerize(title: "Selected Keys".medium(size: 15), subTitle: "\(selectedPhrases.count)/\(Constants.limit)".medium(size: 15), vPadding: 5, hPadding: 5, alignment: .leading, style: .headCaption)
+        .shakeView(shakes: shakes)
         
     }
     
@@ -164,7 +166,14 @@ struct SeedView: View {
             mainBody
 
             Button(text: "Continue", config: .auto(background: .green)) {
-                showNextPage = type.confirmCondition(keysToConfirm: selectedPhrases)
+                let val = type.confirmCondition(keysToConfirm: selectedPhrases)
+                showNextPage = val
+                if !val {
+                    withAnimation(.easeInOut(duration: 1)) {
+                        self.shakes += 5
+                    }
+                }
+                
             }
             .slideIn(show: showButton, direction: .bottom)
             .padding(.init(by: 10))

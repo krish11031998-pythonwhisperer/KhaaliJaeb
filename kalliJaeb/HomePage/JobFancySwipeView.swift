@@ -130,10 +130,6 @@ struct JobFancySwipeView: View {
                     self.ratio = 0.5
                 }
             }
-//            asyncMainAnimation {
-//
-//            }
-//            self.ratio = 0.5
         }
     }
     
