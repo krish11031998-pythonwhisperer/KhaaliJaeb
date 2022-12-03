@@ -41,6 +41,8 @@
 		EFAAB592293B7989001D431B /* JobFancySwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB591293B7989001D431B /* JobFancySwipeView.swift */; };
 		EFF2C929293B941C0081E23E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C928293B941C0081E23E /* Image.swift */; };
 		EFF2C92B293B957D0081E23E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C92A293B957D0081E23E /* UIImage.swift */; };
+		EFF2C92D293BA12C0081E23E /* CustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C92C293BA12C0081E23E /* CustomWebView.swift */; };
+		EFF2C930293BA56A0081E23E /* googleTest.html in Resources */ = {isa = PBXBuildFile; fileRef = EFF2C92F293BA56A0081E23E /* googleTest.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		EFAAB591293B7989001D431B /* JobFancySwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFancySwipeView.swift; sourceTree = "<group>"; };
 		EFF2C928293B941C0081E23E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		EFF2C92A293B957D0081E23E /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		EFF2C92C293BA12C0081E23E /* CustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebView.swift; sourceTree = "<group>"; };
+		EFF2C92F293BA56A0081E23E /* googleTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = googleTest.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 		EFA59501293A7F0A003BC760 /* kalliJaeb */ = {
 			isa = PBXGroup;
 			children = (
+				EFF2C92E293BA5540081E23E /* AdditionalAssets */,
 				EFAAB590293B7973001D431B /* HomePage */,
 				EFAAB544293A91ED001D431B /* CommonComponents */,
 				EFAAB541293A8ED5001D431B /* Info.plist */,
@@ -249,6 +254,7 @@
 				EFAAB54C293AAB21001D431B /* ViewHelper.swift */,
 				EFF2C928293B941C0081E23E /* Image.swift */,
 				EFF2C92A293B957D0081E23E /* UIImage.swift */,
+				EFF2C92C293BA12C0081E23E /* CustomWebView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +301,14 @@
 				EFAAB591293B7989001D431B /* JobFancySwipeView.swift */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		EFF2C92E293BA5540081E23E /* AdditionalAssets */ = {
+			isa = PBXGroup;
+			children = (
+				EFF2C92F293BA56A0081E23E /* googleTest.html */,
+			);
+			path = AdditionalAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +425,7 @@
 				EFAAB537293A844C001D431B /* Satoshi-Medium.otf in Resources */,
 				EFAAB52E293A844C001D431B /* Satoshi-Bold.otf in Resources */,
 				EFAAB538293A844C001D431B /* Satoshi-Variable.ttf in Resources */,
+				EFF2C930293BA56A0081E23E /* googleTest.html in Resources */,
 				EFAAB532293A844C001D431B /* Satoshi-BoldItalic.otf in Resources */,
 				EFAAB536293A844C001D431B /* Satoshi-MediumItalic.otf in Resources */,
 				EFAAB530293A844C001D431B /* Satoshi-Black.otf in Resources */,
@@ -548,6 +563,7 @@
 			files = (
 				EFAAB54D293AAB21001D431B /* ViewHelper.swift in Sources */,
 				EFAAB546293A91F9001D431B /* Button.swift in Sources */,
+				EFF2C92D293BA12C0081E23E /* CustomWebView.swift in Sources */,
 				EFAAB540293A8C9E001D431B /* OnboardingFlow.swift in Sources */,
 				EFAAB550293B4718001D431B /* SeedViewModel.swift in Sources */,
 				EFAAB53B293A84B4001D431B /* CustomFonts.swift in Sources */,

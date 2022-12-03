@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let text: String = "<html><body><p>Hello!</p></body></html>"
     var body: some View {
         NavigationView {
-//            SeedView(viewModel: .init(header: "Create Seed Phrase", nextPage: {
-//                SeedView(viewModel: .init(header: "Confirm Seed Phrase", nextPage: {
-//                    LoginFlow()
-//                }))
-//            }))
-            //OnboardingView()
-            HomePage()
+//            OnboardingView()
+           // HomePage()
+//            CustomWebView(html: text)
+            view
+        }
+    }
+    
+    @ViewBuilder var view: some View {
+        
+        if let url = Bundle.main.url(forResource: "googleTest", withExtension: "html"),
+           let string = try? String(contentsOf: url, encoding: .utf8) {
+            CustomWebView(html: string)
+        } else {
+            Color.clear
         }
     }
 }

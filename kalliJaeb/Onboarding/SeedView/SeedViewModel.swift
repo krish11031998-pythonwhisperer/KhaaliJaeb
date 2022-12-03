@@ -47,18 +47,7 @@ extension SeedViewType {
         case .create:
             SeedView(type: .confirm(keys: keys))
         case .confirm(let keys):
-            LoginFlow()
+            HomePage()
         }
     }
 }
-
-//struct SeedViewModel<NextStep:View> {
-//    let header: String
-//    let selectedKeys: [String]
-//    let nextPage: NextStep
-//    
-//    init(header: String, @ViewBuilder nextPage: () -> NextStep) {
-//        self.header = header
-//        self.nextPage = nextPage()
-//    }
-//}
