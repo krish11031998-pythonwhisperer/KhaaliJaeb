@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B1A2C86E834B921C1447EA0 /* Pods_kalliJaebTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A1B774A08758DEF46B9659 /* Pods_kalliJaebTests.framework */; };
+		5B38DC61D69DCC7BEC474667 /* Pods_kalliJaeb_kalliJaebUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459D59ED5AC62581423CF0FA /* Pods_kalliJaeb_kalliJaebUITests.framework */; };
+		D1C4E7BC1C4F6391839929C5 /* Pods_kalliJaeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E263AADF07DA88C553FF90A6 /* Pods_kalliJaeb.framework */; };
+		EFA59503293A7F0A003BC760 /* kalliJaebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA59502293A7F0A003BC760 /* kalliJaebApp.swift */; };
+		EFA59505293A7F0A003BC760 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA59504293A7F0A003BC760 /* ContentView.swift */; };
+		EFA59507293A7F0B003BC760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA59506293A7F0B003BC760 /* Assets.xcassets */; };
+		EFA5950A293A7F0B003BC760 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA59509293A7F0B003BC760 /* Preview Assets.xcassets */; };
+		EFA59514293A7F0B003BC760 /* kalliJaebTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA59513293A7F0B003BC760 /* kalliJaebTests.swift */; };
+		EFA5951E293A7F0B003BC760 /* kalliJaebUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA5951D293A7F0B003BC760 /* kalliJaebUITests.swift */; };
+		EFA59520293A7F0B003BC760 /* kalliJaebUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA5951F293A7F0B003BC760 /* kalliJaebUITestsLaunchTests.swift */; };
+		EFAAB52E293A844C001D431B /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB523293A844C001D431B /* Satoshi-Bold.otf */; };
+		EFAAB52F293A844C001D431B /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB524293A844C001D431B /* Satoshi-Italic.otf */; };
+		EFAAB530293A844C001D431B /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB525293A844C001D431B /* Satoshi-Black.otf */; };
+		EFAAB531293A844C001D431B /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB526293A844C001D431B /* Satoshi-Regular.otf */; };
+		EFAAB532293A844C001D431B /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB527293A844C001D431B /* Satoshi-BoldItalic.otf */; };
+		EFAAB533293A844C001D431B /* Satoshi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB528293A844C001D431B /* Satoshi-Light.otf */; };
+		EFAAB534293A844C001D431B /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB529293A844C001D431B /* Satoshi-LightItalic.otf */; };
+		EFAAB535293A844C001D431B /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB52A293A844C001D431B /* Satoshi-BlackItalic.otf */; };
+		EFAAB536293A844C001D431B /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB52B293A844C001D431B /* Satoshi-MediumItalic.otf */; };
+		EFAAB537293A844C001D431B /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB52C293A844C001D431B /* Satoshi-Medium.otf */; };
+		EFAAB538293A844C001D431B /* Satoshi-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFAAB52D293A844C001D431B /* Satoshi-Variable.ttf */; };
+		EFAAB53B293A84B4001D431B /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB53A293A84B4001D431B /* CustomFonts.swift */; };
+		EFAAB53D293A854A001D431B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB53C293A854A001D431B /* Color.swift */; };
+		EFAAB540293A8C9E001D431B /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB53F293A8C9E001D431B /* LoginFlow.swift */; };
+		EFAAB543293A902E001D431B /* SlideAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB542293A902E001D431B /* SlideAnimaton.swift */; };
+		EFAAB546293A91F9001D431B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB545293A91F9001D431B /* Button.swift */; };
+		EFAAB548293A9ABB001D431B /* SeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB547293A9ABB001D431B /* SeedView.swift */; };
+		EFAAB54B293A9F5E001D431B /* ButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB54A293A9F5E001D431B /* ButtonViewModifier.swift */; };
+		EFAAB54D293AAB21001D431B /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB54C293AAB21001D431B /* ViewHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFA59510293A7F0B003BC760 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA594F7293A7F0A003BC760 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFA594FE293A7F0A003BC760;
+			remoteInfo = kalliJaeb;
+		};
+		EFA5951A293A7F0B003BC760 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA594F7293A7F0A003BC760 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFA594FE293A7F0A003BC760;
+			remoteInfo = kalliJaeb;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		31A9525DA1A4A660AA5D9DD7 /* Pods-kalliJaebTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kalliJaebTests.debug.xcconfig"; path = "Target Support Files/Pods-kalliJaebTests/Pods-kalliJaebTests.debug.xcconfig"; sourceTree = "<group>"; };
+		43FE5266AC72763A46AF4B16 /* Pods-kalliJaeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kalliJaeb.release.xcconfig"; path = "Target Support Files/Pods-kalliJaeb/Pods-kalliJaeb.release.xcconfig"; sourceTree = "<group>"; };
+		459D59ED5AC62581423CF0FA /* Pods_kalliJaeb_kalliJaebUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kalliJaeb_kalliJaebUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FEEC620806035B8FBDE0193 /* Pods-kalliJaebTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kalliJaebTests.release.xcconfig"; path = "Target Support Files/Pods-kalliJaebTests/Pods-kalliJaebTests.release.xcconfig"; sourceTree = "<group>"; };
+		958BDAA0D757623AAA505196 /* Pods-kalliJaeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kalliJaeb.debug.xcconfig"; path = "Target Support Files/Pods-kalliJaeb/Pods-kalliJaeb.debug.xcconfig"; sourceTree = "<group>"; };
+		99A1B774A08758DEF46B9659 /* Pods_kalliJaebTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kalliJaebTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EFCF5931B6BE0A32D81E511 /* Pods-kalliJaeb-kalliJaebUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kalliJaeb-kalliJaebUITests.release.xcconfig"; path = "Target Support Files/Pods-kalliJaeb-kalliJaebUITests/Pods-kalliJaeb-kalliJaebUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB9531F746F9E9303FB42283 /* Pods-kalliJaeb-kalliJaebUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kalliJaeb-kalliJaebUITests.debug.xcconfig"; path = "Target Support Files/Pods-kalliJaeb-kalliJaebUITests/Pods-kalliJaeb-kalliJaebUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E263AADF07DA88C553FF90A6 /* Pods_kalliJaeb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kalliJaeb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA594FF293A7F0A003BC760 /* kalliJaeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kalliJaeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA59502293A7F0A003BC760 /* kalliJaebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kalliJaebApp.swift; sourceTree = "<group>"; };
+		EFA59504293A7F0A003BC760 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EFA59506293A7F0B003BC760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFA59509293A7F0B003BC760 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EFA5950F293A7F0B003BC760 /* kalliJaebTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kalliJaebTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA59513293A7F0B003BC760 /* kalliJaebTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kalliJaebTests.swift; sourceTree = "<group>"; };
+		EFA59519293A7F0B003BC760 /* kalliJaebUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kalliJaebUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA5951D293A7F0B003BC760 /* kalliJaebUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kalliJaebUITests.swift; sourceTree = "<group>"; };
+		EFA5951F293A7F0B003BC760 /* kalliJaebUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kalliJaebUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFAAB523293A844C001D431B /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
+		EFAAB524293A844C001D431B /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
+		EFAAB525293A844C001D431B /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
+		EFAAB526293A844C001D431B /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		EFAAB527293A844C001D431B /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
+		EFAAB528293A844C001D431B /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Light.otf"; sourceTree = "<group>"; };
+		EFAAB529293A844C001D431B /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
+		EFAAB52A293A844C001D431B /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
+		EFAAB52B293A844C001D431B /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
+		EFAAB52C293A844C001D431B /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
+		EFAAB52D293A844C001D431B /* Satoshi-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Variable.ttf"; sourceTree = "<group>"; };
+		EFAAB53A293A84B4001D431B /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		EFAAB53C293A854A001D431B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EFAAB53F293A8C9E001D431B /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		EFAAB541293A8ED5001D431B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EFAAB542293A902E001D431B /* SlideAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideAnimaton.swift; sourceTree = "<group>"; };
+		EFAAB545293A91F9001D431B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		EFAAB547293A9ABB001D431B /* SeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedView.swift; sourceTree = "<group>"; };
+		EFAAB54A293A9F5E001D431B /* ButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModifier.swift; sourceTree = "<group>"; };
+		EFAAB54C293AAB21001D431B /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFA594FC293A7F0A003BC760 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1C4E7BC1C4F6391839929C5 /* Pods_kalliJaeb.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA5950C293A7F0B003BC760 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B1A2C86E834B921C1447EA0 /* Pods_kalliJaebTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA59516293A7F0B003BC760 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B38DC61D69DCC7BEC474667 /* Pods_kalliJaeb_kalliJaebUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		134768301DDB4A913C9CBF39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				958BDAA0D757623AAA505196 /* Pods-kalliJaeb.debug.xcconfig */,
+				43FE5266AC72763A46AF4B16 /* Pods-kalliJaeb.release.xcconfig */,
+				BB9531F746F9E9303FB42283 /* Pods-kalliJaeb-kalliJaebUITests.debug.xcconfig */,
+				9EFCF5931B6BE0A32D81E511 /* Pods-kalliJaeb-kalliJaebUITests.release.xcconfig */,
+				31A9525DA1A4A660AA5D9DD7 /* Pods-kalliJaebTests.debug.xcconfig */,
+				5FEEC620806035B8FBDE0193 /* Pods-kalliJaebTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C839BCEC84C5E6AB4BEE21EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E263AADF07DA88C553FF90A6 /* Pods_kalliJaeb.framework */,
+				459D59ED5AC62581423CF0FA /* Pods_kalliJaeb_kalliJaebUITests.framework */,
+				99A1B774A08758DEF46B9659 /* Pods_kalliJaebTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFA594F6293A7F0A003BC760 = {
+			isa = PBXGroup;
+			children = (
+				EFA59501293A7F0A003BC760 /* kalliJaeb */,
+				EFA59512293A7F0B003BC760 /* kalliJaebTests */,
+				EFA5951C293A7F0B003BC760 /* kalliJaebUITests */,
+				EFA59500293A7F0A003BC760 /* Products */,
+				134768301DDB4A913C9CBF39 /* Pods */,
+				C839BCEC84C5E6AB4BEE21EA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EFA59500293A7F0A003BC760 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFA594FF293A7F0A003BC760 /* kalliJaeb.app */,
+				EFA5950F293A7F0B003BC760 /* kalliJaebTests.xctest */,
+				EFA59519293A7F0B003BC760 /* kalliJaebUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFA59501293A7F0A003BC760 /* kalliJaeb */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB544293A91ED001D431B /* CommonComponents */,
+				EFAAB541293A8ED5001D431B /* Info.plist */,
+				EFAAB53E293A8C8E001D431B /* Onboarding */,
+				EFAAB539293A84A2001D431B /* Extensions */,
+				EFAAB522293A844C001D431B /* Fonts */,
+				EFA59502293A7F0A003BC760 /* kalliJaebApp.swift */,
+				EFA59504293A7F0A003BC760 /* ContentView.swift */,
+				EFA59506293A7F0B003BC760 /* Assets.xcassets */,
+				EFA59508293A7F0B003BC760 /* Preview Content */,
+			);
+			path = kalliJaeb;
+			sourceTree = "<group>";
+		};
+		EFA59508293A7F0B003BC760 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EFA59509293A7F0B003BC760 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFA59512293A7F0B003BC760 /* kalliJaebTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFA59513293A7F0B003BC760 /* kalliJaebTests.swift */,
+			);
+			path = kalliJaebTests;
+			sourceTree = "<group>";
+		};
+		EFA5951C293A7F0B003BC760 /* kalliJaebUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EFA5951D293A7F0B003BC760 /* kalliJaebUITests.swift */,
+				EFA5951F293A7F0B003BC760 /* kalliJaebUITestsLaunchTests.swift */,
+			);
+			path = kalliJaebUITests;
+			sourceTree = "<group>";
+		};
+		EFAAB522293A844C001D431B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB523293A844C001D431B /* Satoshi-Bold.otf */,
+				EFAAB524293A844C001D431B /* Satoshi-Italic.otf */,
+				EFAAB525293A844C001D431B /* Satoshi-Black.otf */,
+				EFAAB526293A844C001D431B /* Satoshi-Regular.otf */,
+				EFAAB527293A844C001D431B /* Satoshi-BoldItalic.otf */,
+				EFAAB528293A844C001D431B /* Satoshi-Light.otf */,
+				EFAAB529293A844C001D431B /* Satoshi-LightItalic.otf */,
+				EFAAB52A293A844C001D431B /* Satoshi-BlackItalic.otf */,
+				EFAAB52B293A844C001D431B /* Satoshi-MediumItalic.otf */,
+				EFAAB52C293A844C001D431B /* Satoshi-Medium.otf */,
+				EFAAB52D293A844C001D431B /* Satoshi-Variable.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EFAAB539293A84A2001D431B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB53A293A84B4001D431B /* CustomFonts.swift */,
+				EFAAB53C293A854A001D431B /* Color.swift */,
+				EFAAB542293A902E001D431B /* SlideAnimaton.swift */,
+				EFAAB54C293AAB21001D431B /* ViewHelper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFAAB53E293A8C8E001D431B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB53F293A8C9E001D431B /* LoginFlow.swift */,
+				EFAAB547293A9ABB001D431B /* SeedView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EFAAB544293A91ED001D431B /* CommonComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB549293A9F46001D431B /* Button */,
+			);
+			path = CommonComponents;
+			sourceTree = "<group>";
+		};
+		EFAAB549293A9F46001D431B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB545293A91F9001D431B /* Button.swift */,
+				EFAAB54A293A9F5E001D431B /* ButtonViewModifier.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFA594FE293A7F0A003BC760 /* kalliJaeb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA59523293A7F0B003BC760 /* Build configuration list for PBXNativeTarget "kalliJaeb" */;
+			buildPhases = (
+				BE5159BF02CDBA8B8944EAF8 /* [CP] Check Pods Manifest.lock */,
+				EFA594FB293A7F0A003BC760 /* Sources */,
+				EFA594FC293A7F0A003BC760 /* Frameworks */,
+				EFA594FD293A7F0A003BC760 /* Resources */,
+				242E5264D7A4930ED5628ABE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kalliJaeb;
+			productName = kalliJaeb;
+			productReference = EFA594FF293A7F0A003BC760 /* kalliJaeb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFA5950E293A7F0B003BC760 /* kalliJaebTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA59526293A7F0B003BC760 /* Build configuration list for PBXNativeTarget "kalliJaebTests" */;
+			buildPhases = (
+				C129BCFFF677A9807D66C2FA /* [CP] Check Pods Manifest.lock */,
+				EFA5950B293A7F0B003BC760 /* Sources */,
+				EFA5950C293A7F0B003BC760 /* Frameworks */,
+				EFA5950D293A7F0B003BC760 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFA59511293A7F0B003BC760 /* PBXTargetDependency */,
+			);
+			name = kalliJaebTests;
+			productName = kalliJaebTests;
+			productReference = EFA5950F293A7F0B003BC760 /* kalliJaebTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EFA59518293A7F0B003BC760 /* kalliJaebUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA59529293A7F0B003BC760 /* Build configuration list for PBXNativeTarget "kalliJaebUITests" */;
+			buildPhases = (
+				DBA154214AC7A747E24E9627 /* [CP] Check Pods Manifest.lock */,
+				EFA59515293A7F0B003BC760 /* Sources */,
+				EFA59516293A7F0B003BC760 /* Frameworks */,
+				EFA59517293A7F0B003BC760 /* Resources */,
+				1DCD5F46531B31674FD12D14 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFA5951B293A7F0B003BC760 /* PBXTargetDependency */,
+			);
+			name = kalliJaebUITests;
+			productName = kalliJaebUITests;
+			productReference = EFA59519293A7F0B003BC760 /* kalliJaebUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFA594F7293A7F0A003BC760 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					EFA594FE293A7F0A003BC760 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					EFA5950E293A7F0B003BC760 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = EFA594FE293A7F0A003BC760;
+					};
+					EFA59518293A7F0B003BC760 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = EFA594FE293A7F0A003BC760;
+					};
+				};
+			};
+			buildConfigurationList = EFA594FA293A7F0A003BC760 /* Build configuration list for PBXProject "kalliJaeb" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFA594F6293A7F0A003BC760;
+			productRefGroup = EFA59500293A7F0A003BC760 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFA594FE293A7F0A003BC760 /* kalliJaeb */,
+				EFA5950E293A7F0B003BC760 /* kalliJaebTests */,
+				EFA59518293A7F0B003BC760 /* kalliJaebUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFA594FD293A7F0A003BC760 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFAAB533293A844C001D431B /* Satoshi-Light.otf in Resources */,
+				EFAAB534293A844C001D431B /* Satoshi-LightItalic.otf in Resources */,
+				EFAAB537293A844C001D431B /* Satoshi-Medium.otf in Resources */,
+				EFAAB52E293A844C001D431B /* Satoshi-Bold.otf in Resources */,
+				EFAAB538293A844C001D431B /* Satoshi-Variable.ttf in Resources */,
+				EFAAB532293A844C001D431B /* Satoshi-BoldItalic.otf in Resources */,
+				EFAAB536293A844C001D431B /* Satoshi-MediumItalic.otf in Resources */,
+				EFAAB530293A844C001D431B /* Satoshi-Black.otf in Resources */,
+				EFAAB535293A844C001D431B /* Satoshi-BlackItalic.otf in Resources */,
+				EFAAB531293A844C001D431B /* Satoshi-Regular.otf in Resources */,
+				EFA5950A293A7F0B003BC760 /* Preview Assets.xcassets in Resources */,
+				EFA59507293A7F0B003BC760 /* Assets.xcassets in Resources */,
+				EFAAB52F293A844C001D431B /* Satoshi-Italic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA5950D293A7F0B003BC760 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA59517293A7F0B003BC760 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DCD5F46531B31674FD12D14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kalliJaeb-kalliJaebUITests/Pods-kalliJaeb-kalliJaebUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kalliJaeb-kalliJaebUITests/Pods-kalliJaeb-kalliJaebUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kalliJaeb-kalliJaebUITests/Pods-kalliJaeb-kalliJaebUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		242E5264D7A4930ED5628ABE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kalliJaeb/Pods-kalliJaeb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kalliJaeb/Pods-kalliJaeb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kalliJaeb/Pods-kalliJaeb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE5159BF02CDBA8B8944EAF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kalliJaeb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C129BCFFF677A9807D66C2FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kalliJaebTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBA154214AC7A747E24E9627 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kalliJaeb-kalliJaebUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFA594FB293A7F0A003BC760 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFAAB54D293AAB21001D431B /* ViewHelper.swift in Sources */,
+				EFAAB546293A91F9001D431B /* Button.swift in Sources */,
+				EFAAB540293A8C9E001D431B /* LoginFlow.swift in Sources */,
+				EFAAB53B293A84B4001D431B /* CustomFonts.swift in Sources */,
+				EFAAB53D293A854A001D431B /* Color.swift in Sources */,
+				EFA59505293A7F0A003BC760 /* ContentView.swift in Sources */,
+				EFAAB548293A9ABB001D431B /* SeedView.swift in Sources */,
+				EFAAB543293A902E001D431B /* SlideAnimaton.swift in Sources */,
+				EFAAB54B293A9F5E001D431B /* ButtonViewModifier.swift in Sources */,
+				EFA59503293A7F0A003BC760 /* kalliJaebApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA5950B293A7F0B003BC760 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA59514293A7F0B003BC760 /* kalliJaebTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA59515293A7F0B003BC760 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA59520293A7F0B003BC760 /* kalliJaebUITestsLaunchTests.swift in Sources */,
+				EFA5951E293A7F0B003BC760 /* kalliJaebUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFA59511293A7F0B003BC760 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFA594FE293A7F0A003BC760 /* kalliJaeb */;
+			targetProxy = EFA59510293A7F0B003BC760 /* PBXContainerItemProxy */;
+		};
+		EFA5951B293A7F0B003BC760 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFA594FE293A7F0A003BC760 /* kalliJaeb */;
+			targetProxy = EFA5951A293A7F0B003BC760 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EFA59521293A7F0B003BC760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EFA59522293A7F0B003BC760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFA59524293A7F0B003BC760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958BDAA0D757623AAA505196 /* Pods-kalliJaeb.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"kalliJaeb/Preview Content\"";
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kalliJaeb/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krishna.kalliJaeb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFA59525293A7F0B003BC760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43FE5266AC72763A46AF4B16 /* Pods-kalliJaeb.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"kalliJaeb/Preview Content\"";
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kalliJaeb/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krishna.kalliJaeb;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EFA59527293A7F0B003BC760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31A9525DA1A4A660AA5D9DD7 /* Pods-kalliJaebTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krishna.kalliJaebTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kalliJaeb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kalliJaeb";
+			};
+			name = Debug;
+		};
+		EFA59528293A7F0B003BC760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FEEC620806035B8FBDE0193 /* Pods-kalliJaebTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krishna.kalliJaebTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kalliJaeb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kalliJaeb";
+			};
+			name = Release;
+		};
+		EFA5952A293A7F0B003BC760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB9531F746F9E9303FB42283 /* Pods-kalliJaeb-kalliJaebUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krishna.kalliJaebUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kalliJaeb;
+			};
+			name = Debug;
+		};
+		EFA5952B293A7F0B003BC760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EFCF5931B6BE0A32D81E511 /* Pods-kalliJaeb-kalliJaebUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krishna.kalliJaebUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kalliJaeb;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFA594FA293A7F0A003BC760 /* Build configuration list for PBXProject "kalliJaeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA59521293A7F0B003BC760 /* Debug */,
+				EFA59522293A7F0B003BC760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA59523293A7F0B003BC760 /* Build configuration list for PBXNativeTarget "kalliJaeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA59524293A7F0B003BC760 /* Debug */,
+				EFA59525293A7F0B003BC760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA59526293A7F0B003BC760 /* Build configuration list for PBXNativeTarget "kalliJaebTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA59527293A7F0B003BC760 /* Debug */,
+				EFA59528293A7F0B003BC760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA59529293A7F0B003BC760 /* Build configuration list for PBXNativeTarget "kalliJaebUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA5952A293A7F0B003BC760 /* Debug */,
+				EFA5952B293A7F0B003BC760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFA594F7293A7F0A003BC760 /* Project object */;
+}
