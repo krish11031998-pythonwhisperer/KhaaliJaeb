@@ -13,7 +13,6 @@ struct OnboardingView: View {
     
     @State var show: Bool = false
     @State var showLogin: Bool = false
-    
     struct Constants {
         static let heroHeader: String = "Welcome to khaaliJaeb!"
     }
@@ -53,7 +52,7 @@ struct OnboardingView: View {
             .padding(.init(by: 20))
             
             NavLink(isActive: $showLogin) {
-                SeedView()
+                SeedView(type: .create)
             }
             
         }
@@ -62,6 +61,13 @@ struct OnboardingView: View {
     
 }
 
+
+struct LoginFlow: View {
+    
+    var body: some View {
+        Color.surfaceBackground
+    }
+}
 
 fileprivate struct Preview: PreviewProvider {
     

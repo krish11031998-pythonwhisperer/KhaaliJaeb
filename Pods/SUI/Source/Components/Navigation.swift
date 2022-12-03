@@ -37,7 +37,7 @@ public extension View {
 
 // MARK: - NavLink
 public struct NavLink<Content: View>: View {
-	
+    @Environment (\.dismiss) var dismiss
 	@Binding var isActive: Bool
 	let content: Content
 	let leadingBarItem: AnyView?
@@ -59,8 +59,9 @@ public struct NavLink<Content: View>: View {
 	
 	private var mainBody: some View {
 		content
-			.navigationBarItems(leading: leadingBarItem ?? defaultBackButton, trailing: trailingBarItem)
-			.navigationBarBackButtonHidden(true)
+			//.navigationBarItems(leading: leadingBarItem ?? defaultBackButton, trailing: trailingBarItem)
+            .navigationBarItems(trailing: trailingBarItem)
+			//.navigationBarBackButtonHidden(true)
 			.navigationBarTitleDisplayMode(.inline)
 	}
 	
@@ -75,6 +76,9 @@ public struct NavLink<Content: View>: View {
 		} label: {
 			Color.clear.frame(size: .zero)
 		}
+        .onChange(of: isActive) { newValue in
+            print("(DEBUG) newValue: ", newValue)
+        }
 
 	}
 	
@@ -85,7 +89,7 @@ fileprivate extension NavLink {
 	var defaultBackButton: AnyView {
 		let config: CustomButtonConfig = .init(imageName: .back, size: .init(squared: 15), foregroundColor: .white, backgroundColor: .black)
 		let button = CustomButton(config: config) {
-			isActive.toggle()
+			isActive = false
 		}
 		return button.anyView
 	}

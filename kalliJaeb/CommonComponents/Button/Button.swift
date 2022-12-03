@@ -24,7 +24,7 @@ struct Button: View {
     }
     
     var body: some View {
-        text.semiBold(color: .textColor, size: 20)
+        text.medium(color: .textColor, size: 20)
             .text
             .addButtonConfig(config: config)
             .buttonify(animation: .easeInOut, action: handler)

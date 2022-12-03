@@ -10,10 +10,7 @@ import SwiftUI
 import SUI
 
 //MARK: - ButtonConfig
-//enum ButtonConfig {
-//    case customConfig(background: Color, cornerRadius: CGFloat, borderColor: Color, borderWidth: CGFloat)
-//    case bordered(background: Color, fillWidth: Bool = true)
-//}
+
 enum ButtonType {
     case large(background: Color)
     case auto(background: Color)
@@ -22,7 +19,7 @@ enum ButtonType {
 //MARK: - ButtonConfigStyle
 struct ButtonConfigStyle: ViewModifier {
     let config: ButtonType
-    
+    @State var size: CGSize = .zero
     init(config: ButtonType) {
         self.config = config
     }
@@ -38,9 +35,10 @@ struct ButtonConfigStyle: ViewModifier {
                 .borderCard(borderColor: .surfaceBackgroundInverse, radius: 8, borderWidth: 1)
         case .auto(let background):
                 content
-                    .padding(7.5)
+                    .padding(.init(vertical: 7.5, horizontal: 20))
                     .background(background)
-                    .borderCard(borderColor: .surfaceBackgroundInverse, radius: 8, borderWidth: 1)
+                    .sizing(size: $size)
+                    .borderCard(borderColor: .surfaceBackgroundInverse, radius: size.minDim.half, borderWidth: 1)
         }
     }
 }

@@ -137,3 +137,47 @@ public extension View {
 		}
 	}
 }
+
+//MARK: - FittingSize
+
+public struct FittingSize: PreferenceKey {
+    
+    public static var defaultValue: CGSize = .zero
+    
+    
+    public static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
+
+public struct SizeReader: ViewModifier {
+    
+    @Binding var size: CGSize
+    
+    init(size: Binding<CGSize>) {
+        self._size = size
+    }
+    
+    public func body(content: Content) -> some View {
+        content
+            .background {
+                GeometryReader { g -> AnyView in
+                    
+                    DispatchQueue.main.async {
+                        self.size = g.size
+                    }
+//
+                    return Color.clear.anyView
+                }
+            }
+    }
+    
+}
+
+public extension View {
+    
+    func sizing(size: Binding<CGSize>) -> some View {
+        self.modifier(SizeReader(size: size))
+    }
+    
+}

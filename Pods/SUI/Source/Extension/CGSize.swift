@@ -29,4 +29,6 @@ public extension CGSize {
 	}
 	
 	static var regularSize: Self { .init(squared: 50) }
+    
+    var minDim: CGFloat  { min(width, height) }
 }

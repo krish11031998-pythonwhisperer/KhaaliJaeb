@@ -33,9 +33,7 @@ extension Array where Self.Element == String {
         var cols: [String] = []
         
         forEach {
-            let width = $0.widthOfString(usingFont: CustomFonts.regular.fontBuilder(size: 20) ?? .systemFont(ofSize: 20)) * 2
-            print("(DEBUG) width (for \($0) : \(width) -> \(remainingWidth)")
-            
+            let width = $0.widthOfString(usingFont: CustomFonts.regular.fontBuilder(size: 20) ?? .systemFont(ofSize: 20)) * 1.75
             if width > remainingWidth {
                 rows.append(cols)
                 cols.removeAll()
@@ -44,7 +42,6 @@ extension Array where Self.Element == String {
                 remainingWidth -= width
             }
             cols.append($0)
-            print("(DEBUG) cols : ", cols)
         }
         
         if !cols.isEmpty {
@@ -57,21 +54,30 @@ extension Array where Self.Element == String {
 
 struct SeedView: View {
     
+    struct Constants {
+
+        static let seedPhrases: [String] = ["Hello", "Seed", "Phrase", "Test", "Create", "an",
+                                            "Turtle", "Fox", "Elephant", "Tiger", "Lion", "Zebra","Snake", "Cat", "Dog","Bottle","Water"]
+        static let padding: CGFloat = 10
+        static let limit: Int = 12
+    }
+    
+    
     @State var show: Bool = false
     @State var selectedPhrases: Array<String> = []
     @State var showButton: Bool = false
+    @State var showNextPage: Bool = false
     @Namespace var animation
+    var type: SeedViewType
     
-    struct Constants {
-        static let heroHeader: String = "Create an Seed Phrase"
-        static let seedPhrases: [String] = ["Hello", "Seed", "Phrase", "Test", "Create", "an",
-                                            "Turtle", "Fox", "Elephant", "Tiger", "Lion", "Zebra"]
-        static let padding: CGFloat = 10
+    init(type: SeedViewType) {
+        self.type = type
     }
     
+   
     private func onAppear() {
         withAnimation(.easeInOut) {
-            self.show.toggle()
+            self.show = true
         }
     }
     
@@ -81,11 +87,6 @@ struct SeedView: View {
             .styled(font: .regular, color: .purple, size: 20)
             .text
             .blobify(background: .purple.opacity(0.12), padding: 7.5, cornerRadius: 7.5)
-            .buttonify {
-                if !self.selectedPhrases.contains(phrase) {
-                    self.selectedPhrases.append(phrase)
-                }
-            }
     }
     
     var grid: some View {
@@ -94,7 +95,11 @@ struct SeedView: View {
     
        return VStack(alignment: .leading, spacing: 10) {
            ForEach(rows, id: \.self) { row in
-               columnBuilder(colsStr: row, isSource: false)
+               columnBuilder(colsStr: row, isSource: true) { text in
+                   if !self.selectedPhrases.contains(text) && self.selectedPhrases.count < 12 {
+                       self.selectedPhrases.append(text)
+                   }
+               }
             }
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -104,54 +109,74 @@ struct SeedView: View {
     
        return VStack(alignment: .leading, spacing: 10) {
            ForEach(rows, id: \.self) { row in
-               columnBuilder(colsStr: row, isSource: true)
-                   .hidden()
+               columnBuilder(colsStr: row, isSource: false) { text in
+                   self.selectedPhrases.removeAll { $0 == text }
+               }
             }
-       }.frame(maxWidth: .infinity, alignment: .leading)
+       }
+       .padding(Constants.padding)
+       .frame(maxWidth: .infinity, minHeight: 100, alignment: .topLeading)
+       .background(Color.purple.opacity(0.15).blur(radius: 10))
+        .borderCard(borderColor: .surfaceBackgroundInverse, radius: 12, borderWidth: 1)
+        .containerize(title: "Selected Keys".medium(size: 15), subTitle: "\(selectedPhrases.count)/\(Constants.limit)".medium(size: 15), vPadding: 5, hPadding: 5, alignment: .leading, style: .headCaption)
+        
     }
     
-    func columnBuilder(colsStr: [String], isSource: Bool) -> some View {
+    func columnBuilder(colsStr: [String], isSource: Bool, handler: @escaping (String) -> Void) -> some View {
         HStack(alignment: .center, spacing: 5) {
-            ForEach(colsStr, id: \.self) {
-                createSeedPhraseBlob(phrase: $0)
-                    .matchedGeometryEffect(id: $0, in: animation, isSource: isSource)
+            ForEach(colsStr, id: \.self) { text in
+                createSeedPhraseBlob(phrase: text)
+                    .matchedGeometryEffect(id: text, in: animation)
+                    .isHidden(isSource ? !self.selectedPhrases.contains(text) : true)
+                    .buttonify {
+                        handler(text)
+                    }
             }
         }
+    }
+    
+    var mainBody: some View {
+        VStack {
+            type.header.bold(size: 30)
+                .text
+                .padding(.init(vertical: 5, horizontal: 10))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .slideIn(show: show, direction: .top)
+            
+            Spacer()
+            
+            grid
+            
+            Spacer().frame(height: 35, alignment: .center)
+
+            selectedGrid
+
+            Spacer()
+//
+        }.padding(.init(by: Constants.padding))
     }
     
     var body: some View {
         ZStack {
             Color.surfaceBackground
                 .ignoresSafeArea()
-            
-            VStack {
-                Constants.heroHeader.bold(size: 30)
-                    .text
-                    .padding(.init(vertical: 5, horizontal: 10))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .slideIn(show: show, direction: .top)
-                
-                Spacer()
-                
-                grid
-                
-                Spacer().frame(height: 35, alignment: .center)
-                
-                selectedGrid
-                Spacer()
-                
-            }.padding(.init(by: Constants.padding))
-            
+
+            mainBody
+
             Button(text: "Continue", config: .auto(background: .green)) {
-                print("(DEBUG) Clicked on Continue!")
+                showNextPage = type.confirmCondition(keysToConfirm: selectedPhrases)
             }
             .slideIn(show: showButton, direction: .bottom)
             .padding(.init(by: 10))
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+
+            NavLink(isActive: $showNextPage) {
+                type.nextStep(keys: selectedPhrases)
+            }
         }
         .onAppear(perform: onAppear)
         .onChange(of: selectedPhrases.count) { count in
-            if count == 2 {
+            if count == Constants.limit {
                 showButton = true
             }
         }
@@ -163,6 +188,8 @@ struct SeedView: View {
 fileprivate struct Preview: PreviewProvider {
     
     static var previews: some View {
-        SeedView()
+        NavigationView {
+            SeedView(type: .create)
+        }
     }
 }
