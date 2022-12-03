@@ -55,7 +55,7 @@ public extension View {
 	}
 	
 	func circularProgressBar(pct: CGFloat, lineWidth: CGFloat, lineColor: Color = .black) -> some View {
-		modifier(AnimatableProgressBarModifer(pct: pct, type: .circle(lineWidth: lineWidth, lineColor: .red)))
+		modifier(AnimatableProgressBarModifer(pct: pct, type: .circle(lineWidth: lineWidth, lineColor: lineColor)))
 	}
 }
 

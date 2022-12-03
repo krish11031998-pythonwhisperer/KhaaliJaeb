@@ -37,6 +37,10 @@
 		EFAAB54B293A9F5E001D431B /* ButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB54A293A9F5E001D431B /* ButtonViewModifier.swift */; };
 		EFAAB54D293AAB21001D431B /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB54C293AAB21001D431B /* ViewHelper.swift */; };
 		EFAAB550293B4718001D431B /* SeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB54F293B4718001D431B /* SeedViewModel.swift */; };
+		EFAAB58F293B78D5001D431B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB58E293B78D5001D431B /* HomePage.swift */; };
+		EFAAB592293B7989001D431B /* JobFancySwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAAB591293B7989001D431B /* JobFancySwipeView.swift */; };
+		EFF2C929293B941C0081E23E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C928293B941C0081E23E /* Image.swift */; };
+		EFF2C92B293B957D0081E23E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2C92A293B957D0081E23E /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		EFAAB54A293A9F5E001D431B /* ButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModifier.swift; sourceTree = "<group>"; };
 		EFAAB54C293AAB21001D431B /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		EFAAB54F293B4718001D431B /* SeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedViewModel.swift; sourceTree = "<group>"; };
+		EFAAB58E293B78D5001D431B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		EFAAB591293B7989001D431B /* JobFancySwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFancySwipeView.swift; sourceTree = "<group>"; };
+		EFF2C928293B941C0081E23E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		EFF2C92A293B957D0081E23E /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 		EFA59501293A7F0A003BC760 /* kalliJaeb */ = {
 			isa = PBXGroup;
 			children = (
+				EFAAB590293B7973001D431B /* HomePage */,
 				EFAAB544293A91ED001D431B /* CommonComponents */,
 				EFAAB541293A8ED5001D431B /* Info.plist */,
 				EFAAB53E293A8C8E001D431B /* Onboarding */,
@@ -238,6 +247,8 @@
 				EFAAB53C293A854A001D431B /* Color.swift */,
 				EFAAB542293A902E001D431B /* SlideAnimaton.swift */,
 				EFAAB54C293AAB21001D431B /* ViewHelper.swift */,
+				EFF2C928293B941C0081E23E /* Image.swift */,
+				EFF2C92A293B957D0081E23E /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,6 +286,15 @@
 				EFAAB54F293B4718001D431B /* SeedViewModel.swift */,
 			);
 			path = SeedView;
+			sourceTree = "<group>";
+		};
+		EFAAB590293B7973001D431B /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				EFAAB58E293B78D5001D431B /* HomePage.swift */,
+				EFAAB591293B7989001D431B /* JobFancySwipeView.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,8 +552,12 @@
 				EFAAB550293B4718001D431B /* SeedViewModel.swift in Sources */,
 				EFAAB53B293A84B4001D431B /* CustomFonts.swift in Sources */,
 				EFAAB53D293A854A001D431B /* Color.swift in Sources */,
+				EFF2C92B293B957D0081E23E /* UIImage.swift in Sources */,
 				EFA59505293A7F0A003BC760 /* ContentView.swift in Sources */,
+				EFF2C929293B941C0081E23E /* Image.swift in Sources */,
+				EFAAB58F293B78D5001D431B /* HomePage.swift in Sources */,
 				EFAAB548293A9ABB001D431B /* SeedView.swift in Sources */,
+				EFAAB592293B7989001D431B /* JobFancySwipeView.swift in Sources */,
 				EFAAB543293A902E001D431B /* SlideAnimaton.swift in Sources */,
 				EFAAB54B293A9F5E001D431B /* ButtonViewModifier.swift in Sources */,
 				EFA59503293A7F0A003BC760 /* kalliJaebApp.swift in Sources */,

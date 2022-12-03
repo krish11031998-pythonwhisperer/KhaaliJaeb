@@ -100,19 +100,28 @@ private class ImageViewModel: ObservableObject {
 
 public struct ImageView: View {
 	@StateObject private var viewModel: ImageViewModel
-	
-	public init(url: String? = nil, image: UIImage? = nil) {
+    private let mode: ContentMode
+    public init(url: String? = nil, image: UIImage? = nil, contentMode: ContentMode = .fill) {
 		self._viewModel = .init(wrappedValue: .init(url: url, img: image))
+        self.mode = contentMode
 	}
 	
 	public var body: some View {
 		ZStack(alignment: .center) {
 			
 			if let validImage = viewModel.image {
-				Image(uiImage: validImage)
-					.resizable()
-					.scaledToFill()
-					.clipped()
+                if mode == .fit {
+                    Image(uiImage: validImage)
+                        .resizable()
+                        .aspectRatio(contentMode: mode)
+                        .frame(width: validImage.size.width, height: validImage.size.height, alignment: .center)
+                        .clipped()
+                } else {
+                    Image(uiImage: validImage)
+                        .resizable()
+                        .aspectRatio(contentMode: mode)                        .clipped()
+                }
+				
 			} else {
 				Color.gray
 					.opacity(0.15)

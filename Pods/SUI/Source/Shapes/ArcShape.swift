@@ -24,8 +24,8 @@ public struct ArcShape: Shape {
 		
 		p.addArc(center: .init(x: rect.width.half, y: rect.height.half),
 				 radius: (max(rect.width, rect.height) + style.lineWidth).half,
-				 startAngle: .init(degrees: 0),
-				 endAngle: .init(degrees: pct * 360), clockwise: false)
+				 startAngle: .init(degrees: -90),
+				 endAngle: .init(degrees: pct * 360 - 90), clockwise: false)
 		
 		return p.strokedPath(style)
 	}

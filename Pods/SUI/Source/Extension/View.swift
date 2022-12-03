@@ -35,6 +35,12 @@ public extension View {
 	func fillHeight(alignment: Alignment = .center) -> some View {
 		frame(maxHeight: .infinity, alignment: alignment)
 	}
+    
+    func circleFrame(size: CGSize, background: Color = .clear, alignment: Alignment = .center) -> some View {
+        frame(width: size.width, height: size.height, alignment: alignment)
+            .background(background)
+            .clipContent(radius: size.minDim.half)
+    }
 }
 
 //MARK: - Clipping Content
