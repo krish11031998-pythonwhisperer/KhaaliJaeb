@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @EnvironmentObject var state: ViewState
     let text: String = "<html><body><p>Hello!</p></body></html>"
     var body: some View {
         NavigationView {
             OnboardingView()
-           // HomePage()
-//            CustomWebView(html: text)
-            //view
+            
         }
     }
     

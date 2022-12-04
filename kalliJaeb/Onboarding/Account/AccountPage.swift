@@ -19,9 +19,12 @@ fileprivate extension EthereumAccount {
 }
 
 struct AccountDetailPage: View {
+   
+    @EnvironmentObject var state: ViewState
     
     private let account: EthereumAccount
     @State var show: Bool = false
+    @State var showHome: Bool = false
     struct Constants {
         static let detailKeys: [String] =  { ["Address", "Public Key"] }()
     }
@@ -30,22 +33,28 @@ struct AccountDetailPage: View {
         self.account = account
     }
     
+    private func fetchPrivateKey() {
+        let storage = EthereumKeyLocalStorage.shared
+        guard let privateKeyData = try? storage.loadPrivateKey(),
+              let privateKey = String(data: privateKeyData, encoding: .utf8)
+        else { return }
+        print("(DEBUG) privateKeyData: ", privateKeyData)
+        print("(DEBUG) private Key: ", privateKey)
+    }
+    
     private var accountBody: some View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(Constants.detailKeys, id:\.self) { key in
                 if let value = account.details[key] {
-                    HStack(alignment: .top) {
-                        key.medium(color: .gray, size: 15).text
-                        Spacer()
-                        value.medium(size: 15).text
-                            .frame(maxWidth: .totalWidth.half)
-                    }
-                    Divider()
+                    value.medium(size: 15).text
+                        .lineLimit(1)
+                        .padding(.init(by: 10))
+                        .borderCard(borderColor: .surfaceBackgroundInverse, radius: 12, borderWidth: 1.25)
+                        .containerize(title: key.medium(size: 12), vPadding: 5, hPadding: 0, spacing: 0, alignment: .leading, style: .headCaption)
                 }
             }
         }
         .padding(.init(by: 12))
-        .borderCard(borderColor: .surfaceBackgroundInverse, radius: 16, borderWidth: 1.5)
         .slideIn(show: show, direction: .bottom)
     }
     
@@ -55,14 +64,31 @@ struct AccountDetailPage: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .leading, spacing: 20) {
-                "Account Page".bold(size: 30)
+                "You are set!".bold(size: 30)
                     .text
+                Spacer().frame(height: 100, alignment: .center)
+                
+                ImageView(image: EmblemLogo.Polygon.image?.resized(size: .init(squared: .totalWidth.half.half)), contentMode: .fill)
+                    .circleFrame(size: .init(squared: .totalWidth.half.half), background: .white.opacity(0.15), alignment: .center)
+                    .fillWidth(alignment: .center)
+                "Connect to Polygon!".bold(size: 20).text
+                    .fillWidth(alignment: .center)
                 Spacer()
                 accountBody
                 Spacer()
+                Button(text: "Continue", config: .auto(background: .green)) {
+                    withAnimation(.easeInOut) {
+                        self.showHome = true
+                    }
+                }.fillWidth(alignment: .trailing)
+                    .slideIn(show: show, direction: .bottom)
             }
             .padding(.init(vertical: 10, horizontal: 16))
             .fillWidth(alignment: .topLeading)
+            
+            NavLink(isActive: $showHome) {
+                HomePage()
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
@@ -70,6 +96,7 @@ struct AccountDetailPage: View {
                     self.show = true
                 }
             }
+            fetchPrivateKey()
         }
     }
     

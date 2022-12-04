@@ -33,6 +33,7 @@ struct HomePage: View {
             
             mainBody
         }
+        .navigationBarBackButtonHidden(true)
     }
     
 }

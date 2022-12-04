@@ -34,6 +34,7 @@ extension JobModel {
 struct JobCard: View {
     
     @State private var ratio: CGFloat = 0
+    @State private var matchRatio: CGFloat = 0
 //    @Binding private var isCurrent: Bool
     private var job: JobModel
     
@@ -41,45 +42,66 @@ struct JobCard: View {
         self.job = jobModel
     }
     
-    private func skills(languages: [Logo]) -> some View {
+    private func requiredSkills(languages: [Logo]) -> some View {
         
-        let size: CGFloat = 60
+        let size: CGFloat = 45
         
         let col: [GridItem] = [.init(.adaptive(minimum: size, maximum: size), spacing: 12, alignment: .leading)]
         
-        return LazyVGrid(columns: col, alignment: .leading, spacing: 10) {
+        return LazyVGrid(columns: col, alignment: .leading, spacing: 15) {
             ForEach(languages, id: \.self) {
                 ImageView(image: $0.image?.resized(size: .init(squared: size.half)), contentMode: .fit)
                     .circleFrame(size: .init(squared: size), background: .white.opacity(0.15), alignment: .center)
-                    .circularProgressBar(pct: ratio, lineWidth: 3, lineColor: .purple)
+                    .circularProgressBar(pct: ratio, lineWidth: 1.5, lineColor: .purple)
             }
 
         }
     }
     
+    private func yourMatch() -> some View {
+        RoundedRectangle(cornerRadius: 20)
+            .fill(Color.surfaceBackgroundInverse.opacity(0.1))
+            .horizontalProgressBar(pct: matchRatio, lineColor: .green)
+            .fillWidth(alignment: .leading)
+            .padding(.horizontal, 8)
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .center, spacing: 10) {
-                "FrontEnd Engineer".bold(size: 20).text
+                VStack(alignment: .leading, spacing: 10) {
+                    "FrontEnd Engineer".bold(size: 20).text
+                    "Meta".medium(size: 12).text
+                }
                 Spacer()
             }
-            self.skills(languages: Logo.allCases)
-                .containerize(title: "Required Skils".medium(size: 15), vPadding: 8)
+            
+            "You will be working in a exciting team and will be building the USE-LESS metaverse project website, to help sell our foolish dream that metaverse ACTUALLY is .. USeLEsS"
+                .medium(color: .gray, size: 15)
+                .text
+            
+            self.requiredSkills(languages: Logo.allCases)
+                .padding(.horizontal, 8)
+                .containerize(title: "Required Skils".medium(size: 15), vPadding: 8, hPadding: 0)
+            
+            yourMatch()
+                .frame(height: 12.5, alignment: .center)
+                .containerize(title: "Match".medium(size: 15), vPadding: 8, hPadding: 0)
             Spacer()
         }
-        .padding(.init(vertical: 20, horizontal: 10))
+        .padding(.init(vertical: 20, horizontal: 20))
         .background(Color.surfaceBackground)
         .frame(height: .totalHeight.half, alignment: .center)
         .borderCard(borderColor: .surfaceBackgroundInverse, radius: 20, borderWidth: 1.25)
         .padding(.horizontal, 10)
         .frame(maxWidth: .infinity)
         .onAppear {
-            self.ratio = .random(in: 0.3..<0.9)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                withAnimation(.easeInOut) {
+                    self.ratio = .random(in: 0.3..<0.9)
+                    self.matchRatio = .random(in: 0.3..<0.9)
+                }
+            }
         }
-//        .onChange(of: isCurrent) { isCurrent in
-//            if isCurrent {
-//
-//            }
-//        }
     }
 }

@@ -119,7 +119,7 @@ public struct ImageView: View {
                 } else {
                     Image(uiImage: validImage)
                         .resizable()
-                        .aspectRatio(contentMode: mode)                        .clipped()
+                        .aspectRatio(contentMode: mode)                     .clipped()
                 }
 				
 			} else {

@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 import web3
 
+extension EthereumKeyLocalStorage {
+    static var shared: EthereumKeyLocalStorage = .init()
+}
+
 class SeedViewModel: ObservableObject {
     
     struct Constants {
@@ -122,7 +126,7 @@ class SeedViewModel: ObservableObject {
     //MARK: - AccountCreation
     
     private func createAccount() {
-        guard let account = try? EthereumAccount.create(replacing: EthereumKeyLocalStorage(), keystorePassword: "USER_PASSWORD") else { return }
+        guard let account = try? EthereumAccount.create(replacing: EthereumKeyLocalStorage.shared, keystorePassword: "USER_PASSWORD") else { return }
         print("(DEBUG) account : ", account.address)
         self.account = account
         self.showNextPage = true
