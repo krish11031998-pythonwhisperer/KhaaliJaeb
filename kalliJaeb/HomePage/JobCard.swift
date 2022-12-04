@@ -17,12 +17,23 @@ struct JobSkill {
 struct JobModel {
     let idx: Int
     let title: String
+    let organization: String
+    let description: String
     let skills: [JobSkill]
 }
 
 extension JobModel {
     static func basicModel(idx: Int) -> JobModel {
-        .init(idx: idx, title: "FrontEnd Engineering", skills: [
+        .init(idx: idx, title: "FrontEnd Engineering", organization: "Meta", description: "You will be working in a exciting team and will be building the USE-LESS metaverse project website, to help sell our foolish dream that metaverse ACTUALLY is .. USeLEsS", skills: [
+            .init(name: "Python", logo: .Python),
+            .init(name: "JS", logo: .JS),
+            .init(name: "Rust", logo: .Rust),
+            .init(name: "Solidity", logo: .Solidity)
+        ])
+    }
+    
+    static func secondBasicModel(idx: Int) -> JobModel {
+        .init(idx: idx, title: "Dev Ops", organization: "Devfolio", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book", skills: [
             .init(name: "Python", logo: .Python),
             .init(name: "JS", logo: .JS),
             .init(name: "Rust", logo: .Rust),
@@ -66,17 +77,18 @@ struct JobCard: View {
             .padding(.horizontal, 8)
     }
     
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .center, spacing: 10) {
                 VStack(alignment: .leading, spacing: 10) {
-                    "FrontEnd Engineer".bold(size: 20).text
-                    "Meta".medium(size: 12).text
+                    job.title.bold(size: 20).text
+                    job.organization.medium(size: 12).text
                 }
                 Spacer()
             }
             
-            "You will be working in a exciting team and will be building the USE-LESS metaverse project website, to help sell our foolish dream that metaverse ACTUALLY is .. USeLEsS"
+            job.description
                 .medium(color: .gray, size: 15)
                 .text
             
@@ -88,6 +100,7 @@ struct JobCard: View {
                 .frame(height: 12.5, alignment: .center)
                 .containerize(title: "Match".medium(size: 15), vPadding: 8, hPadding: 0)
             Spacer()
+            "Message".medium(size: 12).text.blobify(background: .blue, padding: 10, cornerRadius: 12)
         }
         .padding(.init(vertical: 20, horizontal: 20))
         .background(Color.surfaceBackground)

@@ -59,7 +59,7 @@ struct SeedView: View {
         static let seedPhrases: [String] = ["Hello", "Seed", "Phrase", "Test", "Create", "an",
                                             "Turtle", "Fox", "Elephant", "Tiger", "Lion", "Zebra","Snake", "Cat", "Dog","Bottle","Water"]
         static let padding: CGFloat = 16
-        static let limit: Int = 12
+        static let limit: Int = 1
     }
     
     @StateObject var model: SeedViewModel

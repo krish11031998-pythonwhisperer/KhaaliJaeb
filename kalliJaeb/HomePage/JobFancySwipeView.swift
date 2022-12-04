@@ -71,9 +71,14 @@ struct JobFancySwipeView: View {
     
     var body: some View {
         ZStack {
+            VStack(alignment: .center) {
+                "You've swiped through all the job listing".medium(size: 12).text
+                "pls pay 1 ETH to rewind".bold(size: 11).text
+                    .blobify(background: .green, padding: 10, cornerRadius: 12)
+            }.frame(maxWidth: .infinity, alignment: .center)
             ForEach(0..<Constants.numbers) {
                 if $0 >= currentIdx &&  $0 <= currentIdx + 2 {
-                    JobCard(jobModel: .basicModel(idx: $0))
+                    JobCard(jobModel: $0%2 == 0 ? .secondBasicModel(idx: $0) : .basicModel(idx: $0))
                         .scaleEffect(1 - CGFloat($0 - currentIdx) * 0.075)
                         .offset(x: $0 == currentIdx ? xOff : 0,
                                 y: $0 == currentIdx ? yOff : CGFloat($0 - currentIdx) * 25)
